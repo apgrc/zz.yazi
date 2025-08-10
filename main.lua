@@ -112,7 +112,6 @@ end
 
 --@return nil
 function zz.jump(jump_data)
-
   -- for some reason making the jump step by step is
   -- more consistent than making the complete jump
   for _ = 1, jump_data.jump do
@@ -152,25 +151,25 @@ end
 
 return {
   entry = function(_, job)
-		local action = job.args[1]
-		if not action then
-			return
-		end
+    local action = job.args[1]
+    if not action then
+      return
+    end
 
-		if action == "center" then
+    if action == "center" then
       zz:go_center()
       return
-		end
+    end
 
-		if action == "top" then
+    if action == "top" then
       zz:go_top()
       return
-		end
+    end
 
-		if action == "bottom" then
+    if action == "bottom" then
       zz:go_bottom()
       return
-		end
+    end
   end,
   -- for testing
   module = zz,
